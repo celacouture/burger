@@ -7,7 +7,7 @@ var router=express.Router();
 var burger=require("../models/burger.js");
 
 //create routes an set logic where required
-router.get('/' function(req, res){
+router.get("/", function(req, res){
   burger.all(function(data){
     var hbsObject={
       burgers:data
@@ -43,8 +43,9 @@ router.put('/api/burgers/:id', function(req, res){
   });
 });
 
-router.delete("/api/burgers/:id", function(req, res){
-  var condition="id = " +req.params.id;
-
-  burger.delete(condition, function(result))
-})
+// router.delete("/api/burgers/:id", function(req, res){
+//   var condition="id = " +req.params.id;
+//
+//   burger.delete(condition, function(result))
+// })
+module.exports=router;

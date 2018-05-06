@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="jumbotron">
+    <header>
+      <h1>Austin Burger Bingo</h1>
+      <h3>A Burger Tracker</h3>
+    </header>
+  </div>
+
+  <div class="row justify-content-between">
+    <div class="col-5 burgerList">
+      <h3>Burgers to Eat</h3>
+      <ul>
+         {{#each burgers}} {{#if devoured}} {{> burger/burger_block devoured=false}} {{/if}} {{/each}}
+      </ul>
+
+    </div>
+
+    <div class="col-5 eatList">
+      <h3>Burgers Eaten</h3>
+      <ul>
+            {{#each burgers}} {{#unless devoured}}
+            <li>
+            {{burger_name}}
+            </li>
+            {{/unless}} {{/each}}
+          </ul>
+    </div>
+
+  </div>
+
+  <div class="row container">
+  <div class="col-12 addBurger">
+    <h3>Add a Burger</h3>
+
+    <form class="create-form">
+<div class="form-group">
+<label for="formGroupExampleInput">New Burger</label>
+<input type="text" class="form-control burger" id="formGroupExampleInput" placeholder="New Burger">
+
+</div>
+<button type="submit" class="btn btn-primary addBurgerBtn">Add Burger</button>
+</form>
+
+  </div>
+
+  </div>
+</div>

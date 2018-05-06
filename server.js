@@ -1,31 +1,32 @@
+var express = require("express");
+var bodyParser = require("body-parser");
 
-var express = require('express');
-var bodyParser = require('body-parser');
+var PORT = process.env.PORT || 8080;
 
-
-
-var PORT = process.env.PORT || 8000;
 var app = express();
-//serve static content aka style.css etc
-app.use(express.static('public'));
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("./public"));
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
 
-
 // Set Handlebars.
 var exphbs = require("express-handlebars");
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
 
-//import routes and give server access to them
-var routes=require("./controllers/burgers_controller");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controllers.js");
 
 app.use(routes);
 
-app.listen(process.env.PORT || 8000, function(){
-  console.log('The app is definitely listening on port ' + port);
+// Start our server so that it can begin listening to client requests.
+app.listen(PORT, function() {
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
 });

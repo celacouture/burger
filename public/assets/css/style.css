@@ -1,5 +1,5 @@
 body{
-  background-image: url('../images/advertising-artwork-background-471164.jpg');
+  background-image: url('../images/ryan-magsino-479875-unsplash.jpg');
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,4 +42,12 @@ h3{
   background-color: #fff;
   min-height: 200px;
   border-radius: 15px;
+}
+
+.change-devour, .addBurgerBtn{
+  padding:5px;
+  border-radius: 15px;
+  background-color: #1B2631;
+  border: 1px solid #19FB1F;
+color: #fff;
 }

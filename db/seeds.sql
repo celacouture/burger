@@ -1,6 +1,6 @@
 INSERT INTO burgers(burger_name, devoured)
-VALUES("Smoke Shack", true);
+VALUES("Shake Shack", true);
 INSERT INTO burgers(burger_name, devoured)
-VALUES("Double Double", true);
+VALUES("Whataburger", true);
 INSERT INTO burgers(burger_name, devoured)
-VALUES("Whopper", false);
+VALUES("Hopdoddy", false);

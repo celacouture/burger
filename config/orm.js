@@ -7,7 +7,7 @@ var connection=require('../config/connection')
 //helper function for sql syntax, the below function loops through and creates and array of question marks
 
 function printQuestionMarks(num){
-  var arr[];
+  var arr=[];
 
   for(var i=0; i<num; i++){
     arr.push("?");
@@ -39,17 +39,17 @@ function objToSql(ob){
 }
 //object for all our sql function statements
 var orm={
-  all:function(tableInput, cb){
+  all:function(tableInput, callback){
     var queryString="SELECT * FROM " +tableInput+";";
     connection.query(queryString, function(err, result){
       if(err){
         throw err;
       }
-      cb(result);
+      callback(result);
     });
   },
 
-  create:function(table, cols, vals, cb){
+  create:function(table, cols, vals, callback){
     var queryString="INSERT INTO " +table;
 
     queryString += " (";
@@ -66,11 +66,11 @@ var orm={
         throw err;
       }
 
-      cb(result);
+      callback(result);
     });
   },
 
-  update:function(table, objColVals, condition, cb){
+  update:function(table, objColVals, condition, callback){
     var queryString="UPDATE " + table;
 
     queryString += " SET ";
@@ -83,22 +83,22 @@ var orm={
       if(err){
         throw err;
       }
-      cb(result);
+      callback(result);
     });
   },
 
-  delete:function(table, condition, cb){
-    var queryString="DELETE FROM " +table;
-    queryString += 'WHERE ';
-    queryString += condition;
-
-    connection.query(queryString, function(err, result){
-      if(err){
-        throw err;
-      }
-      cb(result);
-    });
-  }
+  // delete:function(table, condition, cb){
+  //   var queryString="DELETE FROM " +table;
+  //   queryString += 'WHERE ';
+  //   queryString += condition;
+  //
+  //   connection.query(queryString, function(err, result){
+  //     if(err){
+  //       throw err;
+  //     }
+  //     cb(result);
+  //   });
+  // }
 };
 
 
