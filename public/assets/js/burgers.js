@@ -1,7 +1,7 @@
 $(function(){
   $(".change-devour").on('click', function(event){
-    var id=$(event.currentTarget).data('id');
-    var newDevour=$(event.currentTarget).data("newdevour");
+    var id=$(this).data('id');
+    var newDevour=$(this).data("newdevour");
 
     var newlyDevoured={
       devoured:newDevour
@@ -32,7 +32,19 @@ $(function(){
       console.log("new burger added");
 
       location.reload();
-    })
+    });
   });
+  // 
+  // $(".delete-burger").on('click', function(event){
+  //   var id=$(this).data("id");
+  //
+  //   $.ajax('/api/burgers/' + id, {
+  //     type:"DELETE"
+  //   }).then(function(){
+  //     console.log("deleted burger", id);
+  //
+  //     location.reload();
+  //   });
+  // });
 
 });

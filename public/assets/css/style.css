@@ -44,7 +44,7 @@ h3{
   border-radius: 15px;
 }
 
-.change-devour, .addBurgerBtn{
+.change-devour, .addBurgerBtn, .delete-burger{
   padding:5px;
   border-radius: 15px;
   background-color: #1B2631;
