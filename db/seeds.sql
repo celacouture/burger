@@ -1,6 +1,7 @@
-INSERT INTO burgers(burger_name, devoured)
-VALUES("Shake Shack", true);
-INSERT INTO burgers(burger_name, devoured)
-VALUES("Whataburger", true);
-INSERT INTO burgers(burger_name, devoured)
-VALUES("Hopdoddy", false);
+INSERT INTO burgers(burger_name, devoured, date)
+VALUES
+("Shake Shack", 0, CURRENT_TIMESTAMP),
+
+("Whataburger", 0, CURRENT_TIMESTAMP),
+
+("Hopdoddy", 0, CURRENT_TIMESTAMP);
